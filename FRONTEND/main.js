@@ -52,7 +52,15 @@ function Submit() {
         values.push(input.value.trim()); // trim: eltávolítja az esetleges szóközöket
     });
 
-    return values;
+    fetch("http://localhost:5033/wordapi/guess", {
+        method : "POST",
+        headers : {"Content-Type":"application/json"},
+        body : JSON.stringify({
+            word : values
+        })
+    }).then(resp=>{
+        console.log("response: ", resp)
+    }).catch(error=>console.log(error));
 }
 
 GenerateWord()
