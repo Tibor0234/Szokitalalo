@@ -26,7 +26,7 @@ namespace Akasztofa.Data
             int[] difference = new int[this.words[0].word.Length];
             for (int i = 0; i < difference.Length; i++)
             {
-                difference[i] = Math.Abs((int)words[0].word[0] - (int)words[1].word[0]);
+                difference[i] = Math.Abs((int)words[0].word[i] - (int)words[1].word[i]);
             }
             return difference;
         }
