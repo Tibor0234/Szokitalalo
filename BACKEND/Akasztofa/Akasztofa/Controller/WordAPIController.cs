@@ -26,5 +26,11 @@ namespace Akasztofa.Controller
         {
             this.repo.Create(word);
         }
+
+        [HttpGet]
+        public List<Word> Read()
+        {
+            return this.repo.Read();
+        }
     }
 }
