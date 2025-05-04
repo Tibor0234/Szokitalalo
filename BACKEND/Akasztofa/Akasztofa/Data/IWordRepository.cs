@@ -6,5 +6,6 @@ namespace Akasztofa.Data
     {
         public void Create(Word word);
         public List<Word> Read();
+        public int[] Compare();
     }
 }

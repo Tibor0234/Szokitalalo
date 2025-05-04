@@ -2,11 +2,11 @@
 {
     public class Word
     {
-        public char[] Word {  get; set; }
+        public char[] word { get; set; }
 
         public Word(char[] word)
         {
-            this.Word = word;
+            this.word = word;
         }
 
         public Word()

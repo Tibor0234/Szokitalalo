@@ -28,9 +28,9 @@ namespace Akasztofa.Controller
         }
 
         [HttpGet]
-        public List<Word> Read()
+        public int[] Read()
         {
-            return this.repo.Read();
+            return this.repo.Compare();
         }
     }
 }

@@ -23,10 +23,10 @@ namespace Akasztofa.Data
 
         public int[] Compare()
         {
-            int[] difference = new int[words[0].Word.Length];
+            int[] difference = new int[this.words[0].word.Length];
             for (int i = 0; i < difference.Length; i++)
             {
-                difference[i] = Math.Abs((int)words[0].Word[0] - (int)words[1].Word[0]);
+                difference[i] = Math.Abs((int)words[0].word[0] - (int)words[1].word[0]);
             }
             return difference;
         }
