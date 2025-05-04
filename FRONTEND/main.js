@@ -1,27 +1,28 @@
 const words = [
-    "asztal",
-    "körte",
-    "gyerek",
-    "halász",
-    "csizma",
-    "tükör",
-    "papír",
-    "erdő",
-    "kabát",
-    "motor",
+    "angol",
     "kulcs",
-    "doboz",
-    "lakat",
+    "motor",
+    "darab",
+    "dolog",
+    "gomba",
     "fogas",
-    "csónak",
-    "keret",
-    "vödör",
-    "gyűrű",
-    "olló",
-    "szégyen"
+    "hurok",
+    "karfa",
+    "csizma",
+    "labda",
+    "lazac",
+    "gyerek",
+    "nappal",
+    "nyomda",
+    "lakat",
+    "robot",
+    "doboz",
+    "szivar",
+    "keret"
 ];
 
-function generateWord() {
+
+function GenerateWord() {
     const container = document.getElementById("word-container");
     container.innerHTML = ""; // előző tartalom törlése
   
@@ -43,4 +44,15 @@ function generateWord() {
     }
 }
 
-generateWord()
+function Submit() {
+    const inputs = document.querySelectorAll(".letter-input");
+    const values = [];
+
+    inputs.forEach(input => {
+        values.push(input.value.trim()); // trim: eltávolítja az esetleges szóközöket
+    });
+
+    return values;
+}
+
+GenerateWord()

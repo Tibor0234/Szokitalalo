@@ -2,7 +2,16 @@
 {
     public class Word
     {
-        public int Length { get; set; }
+        public char[] word;
 
+        public Word(char[] word)
+        {
+            this.word = word;
+        }
+
+        public Word()
+        {
+            
+        }
     }
 }
