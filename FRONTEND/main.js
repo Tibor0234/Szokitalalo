@@ -41,6 +41,8 @@ function GenerateWord() {
     }
 }
 
+let guess = "";
+
 function Submit() {
     const inputs = document.querySelectorAll(".letter-input");
     const values = [];
@@ -53,6 +55,10 @@ function Submit() {
     inputs.forEach(input => {
         values.push(input.value.trim());
     });
+
+    for (let i = 0; i < values.length; i++) {
+        guess += values[i]
+    }
 
     fetch("http://localhost:5033/wordapi/target", {
         method : "POST",
@@ -80,8 +86,10 @@ function Submit() {
 
 async function Result() {
     const response = await fetch("http://localhost:5033/wordapi")
-    const word = await response.json()
+    const result = await response.json()
+    console.log(result)
     console.log(word)
+    console.log(guess)
 }
 
 GenerateWord()
