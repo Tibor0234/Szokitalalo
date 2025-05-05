@@ -61,6 +61,7 @@ function Submit() {
     });
 
     if (filled !== inputs.length) {
+        alert("Nincs minden mező kitöltve!")
         return;
     }
 
