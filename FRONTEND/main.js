@@ -24,9 +24,10 @@ const words = [
 const word = words[Math.floor(Math.random() * words.length)];
 
 console.log(word)
+let container;
 
 function GenerateWord() {
-    const container = document.getElementById("word-container");
+    container = document.getElementById("word-container");
     container.innerHTML = "";
 
     for (let i = 0; i < word.length; i++) {
@@ -117,10 +118,11 @@ async function Result() {
     
     let accuracy = (guessed / result.length) * 100
 
-    inputs.forEach(input => {
-        input.style.background = `linear-gradient(to top, green ${accuracy}%, white ${1 - accuracy}%)`;
-    }
-    );
+    const accuracy_bar = document.createElement("input")
+    accuracy_bar.classList.add("bar")
+    accuracy_bar.disabled = true;
+    accuracy_bar.style.background = `linear-gradient(to right, green ${accuracy}%, white ${1 - accuracy}%)`;
+    container.appendChild(accuracy_bar);
 
     let numbers = document.querySelectorAll(".letter-number");
     for (let i = 0; i < numbers.length; i++) {

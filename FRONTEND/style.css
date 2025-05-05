@@ -41,6 +41,13 @@ body {
   max-width: 400px;
 }
 
+.bar {
+  width: 200px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
 h1 {
   font-size: 2em;
   margin-bottom: 10px;
