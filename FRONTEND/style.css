@@ -10,10 +10,13 @@
 }
 
 .letter-input {
-  width: 30px;
+  width: 40px;
   height: 40px;
+  font-size: 1.5em;
   text-align: center;
-  font-size: 24px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  position: relative;
 }
 
 body {
@@ -81,4 +84,3 @@ h1 {
   text-align: center;
   min-height: 30px;
 }
-

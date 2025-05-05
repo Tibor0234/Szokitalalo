@@ -31,13 +31,17 @@ function GenerateWord() {
     for (let i = 0; i < word.length; i++) {
         const cell = document.createElement("div");
         cell.classList.add("letter-cell");
-    
+
         const input = document.createElement("input");
         input.setAttribute("type", "text");
         input.setAttribute("maxlength", "1");
         input.classList.add("letter-input");
-    
+
+        let number = document.createElement("div");
+        number.classList.add("letter-number");
+
         cell.appendChild(input);
+        cell.appendChild(number);
         container.appendChild(cell);
     }
 }
@@ -103,6 +107,11 @@ async function Result() {
         input.style.background = `linear-gradient(to top, green ${accuracy}%, white ${1 - accuracy}%)`;
     }
     );
+
+    let numbers = document.querySelectorAll(".letter-number");
+    for (let i = 0; i < numbers.length; i++) {
+        numbers[i].textContent = result[i]
+    }
 }
 
 GenerateWord()
