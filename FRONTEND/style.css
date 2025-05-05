@@ -75,5 +75,10 @@ h1 {
 
 #result {
   margin-top: 20px;
-  font-size: 1.2em;
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #6a1b9a;
+  text-align: center;
+  min-height: 30px;
 }
+
