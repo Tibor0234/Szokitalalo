@@ -22,6 +22,7 @@ const words = [
 ];
 
 const word = words[Math.floor(Math.random() * words.length)];
+
 console.log(word)
 
 function GenerateWord() {
@@ -37,7 +38,7 @@ function GenerateWord() {
         input.setAttribute("maxlength", "1");
         input.classList.add("letter-input");
 
-        let number = document.createElement("div");
+        const number = document.createElement("div");
         number.classList.add("letter-number");
 
         cell.appendChild(input);
@@ -57,7 +58,8 @@ function Submit() {
     }
 
     inputs.forEach(input => {
-        values.push(input.value.trim());
+        values.push(input.value.trim())
+        input.disabled = true;
     });
 
     fetch("http://localhost:5033/wordapi/target", {
