@@ -16,19 +16,20 @@ namespace Akasztofa.Data
             this.words.Add(word);
         }
 
-        public List<Word> Read()
-        {
-            return this.words;
-        }
-
         public int[] Compare()
         {
             int[] difference = new int[this.words[0].word.Length];
             for (int i = 0; i < difference.Length; i++)
             {
-                difference[i] = Math.Abs((int)words[0].word[i] - (int)words[1].word[i]);
+                difference[i] = Math.Abs((int)this.words[0].word[i] - (int)this.words[1].word[i]);
             }
+            Clear();
             return difference;
+        }
+
+        public void Clear()
+        {
+            this.words.Clear();
         }
     }
 }

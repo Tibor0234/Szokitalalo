@@ -105,7 +105,6 @@ function Submit() {
 async function Result() {
     const response = await fetch("http://localhost:5033/wordapi")
     const result = await response.json()
-    console.log(result)
 
     const result_container = document.getElementById("result")
     result_container.innerHTML = word

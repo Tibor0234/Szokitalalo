@@ -32,5 +32,7 @@ namespace Akasztofa.Controller
         {
             return this.repo.Compare();
         }
+
+        
     }
 }
