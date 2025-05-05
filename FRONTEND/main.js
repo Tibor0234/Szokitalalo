@@ -52,6 +52,17 @@ const word_array = []
 
 function Submit() {
     const inputs = document.querySelectorAll(".letter-input");
+    let filled = 0
+
+    inputs.forEach(input => {
+        if (input.value.trim() !== "") {
+            filled++;
+        }
+    });
+
+    if (filled !== inputs.length) {
+        return;
+    }
 
     for (let i = 0; i < word.length; i++) {
         word_array[i] = word[i]
@@ -61,7 +72,7 @@ function Submit() {
         values.push(input.value.trim())
         input.disabled = true;
     });
-
+    
     fetch("http://localhost:5033/wordapi/target", {
         method : "POST",
         headers : {"Content-Type":"application/json"},
