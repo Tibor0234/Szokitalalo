@@ -22,6 +22,7 @@ const words = [
 ];
 
 const word = words[Math.floor(Math.random() * words.length)];
+console.log(word)
 
 function GenerateWord() {
     const container = document.getElementById("word-container");
@@ -41,13 +42,12 @@ function GenerateWord() {
     }
 }
 
-let guess = "";
+const values = []
+const word_array = []
 
 function Submit() {
     const inputs = document.querySelectorAll(".letter-input");
-    const values = [];
 
-    const word_array = []
     for (let i = 0; i < word.length; i++) {
         word_array[i] = word[i]
     }
@@ -55,10 +55,6 @@ function Submit() {
     inputs.forEach(input => {
         values.push(input.value.trim());
     });
-
-    for (let i = 0; i < values.length; i++) {
-        guess += values[i]
-    }
 
     fetch("http://localhost:5033/wordapi/target", {
         method : "POST",
@@ -87,9 +83,26 @@ function Submit() {
 async function Result() {
     const response = await fetch("http://localhost:5033/wordapi")
     const result = await response.json()
+    console.log(result)
 
     const result_container = document.getElementById("result")
     result_container.innerHTML = word
+
+    const inputs = document.querySelectorAll(".letter-input");
+
+    let guessed = 0
+    for (let i = 0; i < result.length; i++) {
+        if (result[i] == 0) {
+            guessed++
+        }        
+    }
+    
+    let accuracy = (guessed / result.length) * 100
+
+    inputs.forEach(input => {
+        input.style.background = `linear-gradient(to top, green ${accuracy}%, white ${1 - accuracy}%)`;
+    }
+    );
 }
 
 GenerateWord()
