@@ -100,6 +100,20 @@ function Submit() {
             Result()
         }
     }).catch(error=>console.log(error));
+
+    const button = document.getElementById("submit")
+    button.textContent = "Újra"
+    button.onclick = function() {Reset()}
+}
+
+function Reset() {
+    fetch("http://localhost:5033/wordapi", {
+        method : "DELETE"
+    }).then(resp=>{
+        if (resp.ok) {
+            location.reload();
+        }}
+    ).catch(error=>console.log(error));
 }
 
 async function Result() {

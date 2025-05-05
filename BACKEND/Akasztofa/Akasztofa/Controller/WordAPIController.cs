@@ -33,6 +33,10 @@ namespace Akasztofa.Controller
             return this.repo.Compare();
         }
 
-        
+        [HttpDelete]
+        public void Clear()
+        {
+            this.repo.Clear();
+        }
     }
 }
