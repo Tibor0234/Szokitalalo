@@ -41,7 +41,7 @@ body {
   max-width: 400px;
 }
 
-.bar {
+#bar {
   width: 200px;
   height: 20px;
   border: 2px solid #ccc;
